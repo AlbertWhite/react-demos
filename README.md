@@ -1,6 +1,6 @@
 A collection of react demos. Trying to understand how to think to React.
 
-###demo1
+##demo1
 
 How child use props to pass parameter to parent.
 
