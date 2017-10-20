@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      class Input extends React.Component {
+
+        handleChange(event){
+          this.props.changeNumber(event.target.value);
+        }
+
+        render () {
+          return (
+            <div>
+              <input type='number' onChange={this.handleChange.bind(this)} />
+            </div>
+          )
+        }
+      }
+
+      class PercentageShower extends React.Component {
+        render () {
+          return (
+            <div>
+              {(this.props.value*100).toFixed(2)}%
+            </div>
+          )
+        }
+      }
+
+      class PercentageApp extends React.Component {
+
+        constructor(){
+          super();
+          this.state={value: 0};
+        }
+
+        changeNumber(number){
+          this.setState({value: number});
+        }
+
+        render () {
+          return (
+            <div>
+              <Input changeNumber={this.changeNumber.bind(this)}></Input>
+              <PercentageShower value={this.state.value}></PercentageShower>
+            </div>
+          )
+        }
+      }
+
+
+      ReactDOM.render(
+        <PercentageApp></PercentageApp>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
