@@ -7,7 +7,6 @@ class Show extends Component{
       You have counted: {this.props.value}
     </div>
   }
-
 }
 
 const mapStateToProps = (state)=>{
