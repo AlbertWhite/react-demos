@@ -10,6 +10,7 @@ let Addtodo = ({addTodo}) => {
 			<form onSubmit={e => {
 				e.preventDefault()
 				addTodo(input.value)
+				input.value=""
 			}}>
 				<input type="text" ref={(node) => {
 					//get html element with ref
