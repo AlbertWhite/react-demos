@@ -1,5 +1,4 @@
 const filterReducer = (state="all", action) => {
-	state = action;
 	return state;
 }
 

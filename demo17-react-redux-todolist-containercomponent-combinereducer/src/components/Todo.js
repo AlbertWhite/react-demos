@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Todo = ({todo}) => {
+const Todo = ({todo, toggleTodo}) => {
 	return(
-		<div>{todo.content}</div>
+		<div onClick={toggleTodo}>{todo.content}</div>
 	)
 }
 
