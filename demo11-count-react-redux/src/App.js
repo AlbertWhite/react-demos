@@ -17,14 +17,18 @@ const store = createStore(reducer);
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-          <Show/>
-          <Button/>
-        </div>
-      </Provider>
+      <div>The result: {this.props.value}</div>
     );
   }
 }
+
+
+const mapStateToProps = (state) =>{
+  return{
+    value: state.value
+  }
+}
+
+App = connect(mapStateToProps)(App);
 
 export default App;
