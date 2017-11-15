@@ -1,0 +1,1 @@
+export const addTodoAction = (content) => ({"type":"ADD", content})

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Addtodo from '../containers/Addtodo';
+
 const App = () => (
 	<div>
-		123
+		<Addtodo />
 	</div>
 )
 
