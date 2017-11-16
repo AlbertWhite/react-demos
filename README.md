@@ -19,6 +19,9 @@ How to run:
 1. npm install
 2. npm start
 
+## demo16
+Make react-redux and react-router work together.
+
 ## demo17
 Seperate container component and presentational component,
 article from https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
