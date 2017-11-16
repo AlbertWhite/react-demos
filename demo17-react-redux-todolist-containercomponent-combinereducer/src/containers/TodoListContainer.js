@@ -1,4 +1,3 @@
-import React from 'react'
 import TodoList from '../components/TodoList'
 import { toggleTodoAction } from '../actions/actions.js'
 import { connect } from 'react-redux'
@@ -26,6 +25,7 @@ const mapStatusToProps = (status) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return{
+    //always keep the form like this: left side is a function prop, right side is an annoymous function, (input) => {dispatch(action(input))}
 		toggleTodo: (id) => {dispatch(toggleTodoAction(id))}
 	}
 }

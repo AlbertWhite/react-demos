@@ -1,21 +1,18 @@
 import React from 'react';
 
 const Link = ({changeFilter, filter, currentFilter}) => {
-		
-	if(currentFilter == filter){
-		return (
-			<div>
-				<a href="#" onClick={()=>changeFilter(filter)} className="active">{filter}</a> 
-			</div>
-		)
+	
+	let linkElement = null //necessary to set to null when define
+	if(currentFilter === filter){
+		linkElement = <a href="#" onClick={()=>changeFilter(filter)} className="active">{filter}</a> 
+	}else{
+		linkElement = <a href="#" onClick={()=>changeFilter(filter)}>{filter}</a>
 	}
 
-	return (
-			<div>
-				<a href="#" onClick={()=>changeFilter(filter)}>{filter}</a> 
-			</div>
-	)
-	
+	return(
+		<div>{ linkElement }</div>
+	) 
+		
 }
 
 export default Link
