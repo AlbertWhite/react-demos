@@ -5,9 +5,9 @@ const TodoList = ({todos, toggleTodo}) => {
 	return (
 		<div>
 			{
-				todos.map((todo, index)=>{
+				todos.map((todo)=>{
 					//remember to return a value in map
-					return <Todo key={index} todo={todo} toggleTodo={toggleTodo}></Todo>
+					return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo}></Todo>
 				})
 			}
 		</div>

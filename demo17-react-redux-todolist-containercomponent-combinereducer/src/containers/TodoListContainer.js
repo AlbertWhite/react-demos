@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import TodoList from '../components/TodoList'
 import { toggleTodoAction } from '../actions/actions.js'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
 
 const filterTodos = (todos, filter) => {
@@ -10,7 +10,7 @@ const filterTodos = (todos, filter) => {
       return todos
     case 'done':
       return todos.filter(t => t.done)
-    case 'notdone':
+    case 'todo':
       return todos.filter(t => !t.done)
     default:
       throw new Error('Unknown filter: ' + filter)
@@ -19,17 +19,17 @@ const filterTodos = (todos, filter) => {
 
 
 const mapStatusToProps = (status) => {
-	return{
+  return{
 		todos: filterTodos(status.todos, status.filter)
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return{
-		toggleTodo: dispatch(toggleTodoAction)
+		toggleTodo: (id) => {dispatch(toggleTodoAction(id))}
 	}
 }
 
 //connect is just for sending the parameters
-const TodoListContainer = connect(mapStatusToProps)(TodoList)
-export default TodoListContainer;
+const TodoListContainer = connect(mapStatusToProps, mapDispatchToProps)(TodoList)
+export default TodoListContainer

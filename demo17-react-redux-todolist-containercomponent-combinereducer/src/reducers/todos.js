@@ -1,15 +1,17 @@
 const todoReducer = (state=[], action) => {
 	switch(action.type){
 		case "ADD":
-			return [...state, {content: action.content, done: false}];
+			let newState1 = [...state, {content: action.content, done: false, id: action.id}]
+			return newState1
 		case "TOGGLE":
-			return state.map(todo =>
+			let newState = state.map(todo =>
 				(todo.id === action.id) ? {...todo, done: true} : todo
-			);
+			)
+			return newState
 		default:
-			return state;
+			return state
 	}
 }
 
 
-export default todoReducer;
+export default todoReducer
