@@ -50,3 +50,8 @@ Example with react-router-v4, api: https://github.com/ReactTraining/react-router
 - Use match parameter for creating nested routes and creating/passing parameter in routes 
 - Use switch to match the best only result
 - <Route component={NoMatchComponent}/>
+- <Redirect/> is really confusing! We must use that inside another <Route>. The real redirect to me is in javascript, by 'this.props.history.push(...)'
+
+## demo22
+Basic demo with github api, idea from https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world
+Will make it more interesting with seperating environment, with more functions.
