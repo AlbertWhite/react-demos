@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, Redirect } from 'react-router-dom'
+import { Route, Link, Redirect, Switch } from 'react-router-dom'
 
 const Home = () => (
   <div>Home</div> 
@@ -67,11 +67,13 @@ class App extends Component {
         {
           //add exact in Route prevent showing parent div while showing children div
         }
-        <Route exact path='/' component={Home}></Route>
-        <Route path='/component1' component={Component1}></Route>
-        <Route path='/component2' component={Component2}></Route>
-        <Route path='/component3' component={Component3}></Route>
-        <Route component={NoMatchComponent}></Route>
+        <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Route path='/component1' component={Component1}></Route>
+          <Route path='/component2' component={Component2}></Route>
+          <Route path='/component3' component={Component3}></Route>
+          <Route component={NoMatchComponent}></Route>
+        </Switch>
       </div>
     );
   }
