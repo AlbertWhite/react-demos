@@ -5,7 +5,7 @@ import { addToCart } from '../actions'
 
 const mapStateToProps = (state) => {
 	return {
-		products: state.products
+		products: state.products.productList
 	}
 }
 
@@ -18,6 +18,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const ProductsContainer = connect(mapStateToProps, mapDispatchToProps)(Products)
-
 
 export default ProductsContainer

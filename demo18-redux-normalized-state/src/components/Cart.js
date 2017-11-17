@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cart = ({products}) => {
+const Cart = ({products, total}) => {
 
 	return (
 		<div>
@@ -8,13 +8,13 @@ const Cart = ({products}) => {
 			{
 				products.map((product)=>{
 					return (
-						<div>
-							{product.id}
+						<div key={product.key}>
+							{product.title} x {product.quantity}
 						</div>
 					)
 				})
 			}
-			<button>Checkout</button>
+			<span>${total}</span>
 		</div>
 	)
 }

@@ -32,7 +32,7 @@ Use combine reducers to seperate reducers and data source.
 ## demo18
 Shopping cart example, idea from https://github.com/reactjs/redux/tree/master/examples/shopping-cart
 - Try with an action being treated to different reducers (not one to one mapping: https://github.com/pitzcarraldo/reduxible/issues/8)
-- Save products with id and use with id (Normalizing state shape: https://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html )
+- Save products with id and use with id (Normalizing state shape: https://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html ): Format the source data (domain) in state by "byId:{id1:{}, id2:{}}", it makes it easier in the future if we need to build query interface "getById". In other component related state (entity) we just save id for using and displaying it. 
 - Meet the problem of mutation the old state (https://redux.js.org/docs/Troubleshooting.html)
 - Use concat, slice, {...} to avoid array mutation and use object.assign and {...} to avoid object mutataion.(https://egghead.io/lessons/react-redux-avoiding-object-mutations-with-object-assign-and-spread, https://egghead.io/lessons/react-redux-avoiding-array-mutations-with-concat-slice-and-spread)
 

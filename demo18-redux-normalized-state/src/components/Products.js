@@ -9,7 +9,7 @@ const Products = ({products, addToCart}) => {
 				 products.map((product)=>(
 						<div key={product.id}>
 							<span>{product.title} - ${product.price} x {product.inventory}</span>
-							<button onClick={() => addToCart(product.id)}>Add to cart</button>
+							<button disabled={product.inventory < 1} onClick={() => addToCart(product.id)}>Add to cart</button>
 						</div>
 				))
 			}
