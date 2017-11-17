@@ -4,6 +4,7 @@ import itemErrorReducer from './itemErrorReducer'
 import itemLoadingReducer from './itemLoadingReducer'
 import itemReducer from './itemReducer'
 
+//each reducer only store on kind of data
 const reducer = combineReducers({
 	itemErrorReducer,
 	itemLoadingReducer,

@@ -24,6 +24,7 @@ class App extends Component {
       <ul>
         {
           this.props.items.map((item) => {
+            //remember to return in .map
             return(
               <li key={item.id}>
                 {item.label}
@@ -38,6 +39,7 @@ class App extends Component {
 
 const mapStateToPros = (state) => {
   return{
+    //state.reducername. remember we have already use seperated reducers
     items: state.itemReducer,
     hasError: state.itemErrorRedcer,
     isLoading: state.itemLoadingReducer
@@ -46,6 +48,7 @@ const mapStateToPros = (state) => {
 
 const mapDispatchToPros = (dispatch) => {
   return{
+    //remember in the right part, define a function (input) => {dispatch(action)(input)}
     fetchData: (url) => {dispatch(fetchItem(url))}
   }
 }
