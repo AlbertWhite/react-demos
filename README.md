@@ -55,3 +55,10 @@ Example with react-router-v4, api: https://github.com/ReactTraining/react-router
 ## demo22
 Basic demo with github api, idea from https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world
 Will make it more interesting with seperating environment, with more functions.
+
+## demo23
+Example with redux-example
+- Link of basic instruction: https://redux.js.org/docs/recipes/WritingTests.html test with reducer, action creator, component
+- API with Enzyme for component testing http://airbnb.io/enzyme/docs/api/mount.html
+- Assertion in Jest: https://facebook.github.io/jest/docs/en/expect.html
+- Some examples in examples of redux: https://github.com/reactjs/redux/blob/master/examples/shopping-cart/src/components/ProductItem.spec.js

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { add } from '../action'
 
-let Counter = ({addValue}) => {
+export let PureCounter = ({addValue}) => {
 	let input
 	return(
 		<div>
@@ -21,5 +21,5 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-Counter = connect(null, mapDispatchToProps)(Counter)
+const Counter = connect(null, mapDispatchToProps)(PureCounter)
 export default Counter
