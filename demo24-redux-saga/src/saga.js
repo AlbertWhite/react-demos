@@ -19,9 +19,26 @@ export function* helloSaga(){
 	console.log('hello saga')
 }
 
+const API_CALL = (url) => {
+  return fetch(url)
+	.then((response)=> {console.log(response); return response.json();})
+}
+
+export function* getDataAsync() {
+	console.log('123')
+  const response = yield call(API_CALL, 'http://5826ed963900d612000138bd.mockapi.io/items')
+  console.log(response)
+  yield put({ type: 'UPDATE_ITEMS', items: response })
+}
+
+export function* watchGetDataAsync() {
+  yield takeEvery('GET_DATA_ASYNC', getDataAsync)
+}
+
 export default function* rootSaga(){
 	yield all([
 		helloSaga(),
-		watchIncrementAsync()
+		watchIncrementAsync(),
+		watchGetDataAsync()
 	])
 }

@@ -24,13 +24,15 @@ const action = type => store.dispatch({type})
 function render() {
   ReactDOM.render(
     <Counter
-      value={store.getState()}
+      value={store.getState().number}
+      items={store.getState().items}
       onIncrement={() => action('INCREMENT')}
       onDecrement={() => action('DECREMENT')}
     	onIncrementAsync={
     		//unlike redux-thunk, not dispatch a callback dispatch function, but dispatch an object
     		()=> action('INCREMENT_ASYNC')
-    	}/>,
+    	}
+      getDataAsync={()=> action('GET_DATA_ASYNC')}/>,
     document.getElementById('root')
   )
 }
