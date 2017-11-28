@@ -18,7 +18,7 @@
         render () {
           return (
             <div>
-              <input type='number' onChange={this.handleChange.bind(this)} />
+              <input type='number' onChange={(e)=>{this.handleChange(e)}} />
             </div>
           )
         }

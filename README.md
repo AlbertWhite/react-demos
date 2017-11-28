@@ -13,6 +13,7 @@ Some problems with Demo13-rodolist-redux. I tried to use only redux (not react-r
 It is possible to call store.dispatch in child component, but it is not a good practice (take a look here: https://github.com/reactjs/redux/issues/916). This is why we need connect in react-redux to connect store to child component.
 
 Here remains one problem need to figure out after: in store.dispatch(), can I pass a variable inside, and pass store.dispatch(variable) as a prop to the child component.
+- yes: func: (input) => dispatch(ActionCreator(input))
 
 ## demo15
 Example learned from https://github.com/reactjs/react-router-tutorial.
@@ -62,3 +63,6 @@ Example with redux-example
 - API with Enzyme for component testing http://airbnb.io/enzyme/docs/api/mount.html
 - Assertion in Jest: https://facebook.github.io/jest/docs/en/expect.html
 - Some examples in examples of redux: https://github.com/reactjs/redux/blob/master/examples/shopping-cart/src/components/ProductItem.spec.js
+
+## demo24
+Example with redux-saga
