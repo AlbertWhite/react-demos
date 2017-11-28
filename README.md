@@ -66,3 +66,8 @@ Example with redux-example
 
 ## demo24
 Example with redux-saga
+- use generator function to handle async function
+- Helper function 'takeEvery' listen to dispatched action and use a saga function to handle  eg: takeEvery('ACTION_TYPE', functionName)
+- Helper function 'call' call a function which. returns promise. The second parameter is the parameter for the first function. eg: call(delay, 1000)
+- Helper function 'put' helps trigger a dispatched action after we get the data. eg: put({action})
+
