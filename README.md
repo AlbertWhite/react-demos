@@ -52,6 +52,8 @@ Example with react-router-v4, api: https://github.com/ReactTraining/react-router
 - Use switch to match the best only result
 - <Route component={NoMatchComponent}/>
 - <Redirect/> is really confusing! We must use that inside another <Route>. The real redirect to me is in javascript, by 'this.props.history.push(...)'
+- react-router use client side route. After building from create-react-app, need to run specific deploy script in order to deploy in different kinds of places/servers. https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment
+- Have a question unsolved: in react app, how to use react-router to link to a sub project not in the form of react (no component, just static html files)?
 
 ## demo22
 Basic demo with github api, idea from https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world
@@ -68,6 +70,6 @@ Example with redux-example
 Example with redux-saga
 - use generator function to handle async function
 - Helper function 'takeEvery' listen to dispatched action and use a saga function to handle  eg: takeEvery('ACTION_TYPE', functionName)
-- Helper function 'call' call a function which. returns promise. The second parameter is the parameter for the first function. eg: call(delay, 1000)
+- Helper function 'call' call a function which. returns promise. The second parameter is the parameter for the first function. eg: call(delay, 1000). If there are parameters to add in the function, add it as the second parameter.
 - Helper function 'put' helps trigger a dispatched action after we get the data. eg: put({action})
 
