@@ -73,3 +73,8 @@ Example with redux-saga
 - Helper function 'call' call a function which. returns promise. The second parameter is the parameter for the first function. eg: call(delay, 1000). If there are parameters to add in the function, add it as the second parameter.
 - Helper function 'put' helps trigger a dispatched action after we get the data. eg: put({action})
 
+## demo25
+Example with redux-ui
+- no need to write reducers and map prop/dispatch to state
+- really useful with ui props (simple logic, read and write)
+- three step to use : 1. import uiReducer and combine to root reducer 2. wrap component with UI wrapper, pass UI parameters in the state object as the parameter 3. use this.props.ui and this.props.updateUI to get and set UI props. *no need for write reducers*
