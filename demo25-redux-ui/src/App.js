@@ -23,7 +23,11 @@ class App extends Component {
       	{/*get ui props*/}
       	<MyModal modalIsVisiable={this.props.ui.modalIsVisiable} closeModal={this.closeModal.bind(this)}/>
       	<button onClick={() => this.showModal()}>show modal</button>
+      
+
+      	{true && (<div>hello world</div>)}
       </div>
+
     );
   }
 }
