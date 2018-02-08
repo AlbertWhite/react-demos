@@ -44,6 +44,7 @@ Example from https://codepen.io/stowball/post/a-dummy-s-guide-to-redux-and-thunk
 
 ## demo20
 Example from https://codepen.io/stowball/post/a-dummy-s-guide-to-redux-and-thunk-in-react to understand how react-thunk works. redux-logger is added. In order to use fetchapi, need to npm install whatwg-fetch.
+With redux-thunk in reducer, we can use dispatch in dispatch function.
 
 ## demo21
 Example with react-router-v4, api: https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md#component
@@ -74,6 +75,10 @@ Example with redux-saga
 - Helper function 'call' call a function which. returns promise. The second parameter is the parameter for the first function. eg: call(delay, 1000). If there are parameters to add in the function, add it as the second parameter.
 - Helper function 'put' helps trigger a dispatched action after we get the data. eg: put({action})
 
+- yield **effects** in redux-saga
+
+- generator function: every time we call a next(), the function will stop at yield. The excusion of this function can be stopped and restarted.
+
 ## demo25
 Example with redux-ui
 - no need to write reducers and map prop/dispatch to state
@@ -83,3 +88,11 @@ Example with redux-ui
 ## demo26
 React-break for responsive https://github.com/nygardk/react-break
 Really useful is there are lots of changes in response.
+
+## demo28
+From https://redux-saga-in-chinese.js.org/docs/introduction/BeginnerTutorial.html
+
+## demo29
+Form wizard example. 
+- handleSubmit. With handleSubmit, in the parent component, we can access the submit function (with values) by passing onSubmit as the props. https://redux-form.com/7.2.0/docs/faq/handlevson.md/
+- props.initialValues
