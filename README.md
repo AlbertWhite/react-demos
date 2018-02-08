@@ -95,4 +95,4 @@ From https://redux-saga-in-chinese.js.org/docs/introduction/BeginnerTutorial.htm
 ## demo29
 Form wizard example. 
 - handleSubmit. With handleSubmit, in the parent component, we can access the submit function (with values) by passing onSubmit as the props. https://redux-form.com/7.2.0/docs/faq/handlevson.md/
-- props.initialValues
+- props.initialValues 
