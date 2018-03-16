@@ -125,7 +125,11 @@ A sample project with react-redux, react-router, redux-saga, redux-form with htt
 
 To do
 
-* add get and post api in the mockapi
+* create sample api with restify node module
+* design router
 * add router and scene
 * add http get with redux-saga
 * add http post with redux-form
+
+passion creativity consistence
+明早可以起来写点东西 关于养孩子的
