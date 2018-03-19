@@ -68,6 +68,7 @@ Example with react-router-v4, api: https://github.com/ReactTraining/react-router
 * <Redirect/> is really confusing! We must use that inside another <Route>. The real redirect to me is in javascript, by 'this.props.history.push(...)'
 * react-router use client side route. After building from create-react-app, need to run specific deploy script in order to deploy in different kinds of places/servers. https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment
 * Have a question unsolved: in react app, how to use react-router to link to a sub project not in the form of react (no component, just static html files)?
+* History module is one of the two major dependencies of react-router. https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/history.md
 
 ## demo22
 
@@ -120,16 +121,23 @@ Form wizard example.
 
 ## demo29
 
+react-router-redux example
+
+* The library simply enhances a history instance to allow it to synchronize any changes it receives into application state. 5.x is compatible with react-router 4.x. We should use that. https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux
+* Like https://redux.js.org/advanced/usage-with-react-router says, it is fine to seperate redux and router unless we need to time travail and rewind actions that trigger a URL change. React-router-redux is for doing time travel with application state, but React Router doesn't navigate between pages when you replay actions. It controls an important part of application state: the URL.
+* don't understand why we need react-router-redux.. if we do the redirection, we can use history api??
+
+## demo30
+
 From https://redux-saga-in-chinese.js.org/docs/introduction/BeginnerTutorial.html
 A sample project with react-redux, react-router, redux-saga, redux-form with http get and http post
 
 To do
 
-* create sample api with restify node module
-* design router
-* add router and scene
+* create sample api with restify node module - done: api is ready https://github.com/AlbertWhite/restify-api-demo
+* router. Build scene, container, component based on route.
+* add router and scene - need to learn react-router-redux
 * add http get with redux-saga
 * add http post with redux-form
-
-passion creativity consistence
-明早可以起来写点东西 关于养孩子的
+  passion creativity consistence
+  明早可以起来写点东西 关于养孩子的设计师的工作 不仅是之前 更是之后
