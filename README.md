@@ -141,3 +141,6 @@ To do
 * add http post with redux-form
   passion creativity consistence
   明早可以起来写点东西 关于养孩子的设计师的工作 不仅是之前 更是之后
+
+- problem : webpack compiling is long !
+- problem: react router
