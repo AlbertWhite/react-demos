@@ -136,11 +136,14 @@ To do
 
 * create sample api with restify node module - done: api is ready https://github.com/AlbertWhite/restify-api-demo
 * router. Build scene, container, component based on route.
-* add router and scene - need to learn react-router-redux
 * add http get with redux-saga
 * add http post with redux-form
   passion creativity consistence
   明早可以起来写点东西 关于养孩子的设计师的工作 不仅是之前 更是之后
+  which things are 等待
 
-- problem : webpack compiling is long !
-- problem: react router
+// todo: add BundleAnalyzerPlugin for analyser the size of bundle
+// set mode : for dev it is normal to have big bundle
+
+* problem : webpack compiling is long !
+* problem: react router
