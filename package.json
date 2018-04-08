@@ -2,6 +2,7 @@
   "dependencies": {
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-form": "^7.2.3"
+    "redux-form": "^7.2.3",
+    "webpack-bundle-analyzer": "^2.11.1"
   }
 }

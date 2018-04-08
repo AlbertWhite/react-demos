@@ -1,21 +1,27 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CleanWebpackPlugin = require("clean-webpack-plugin")
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    index: "./src/index.js"
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      title: 'react',
-      template: './src/index.html'
+      title: "react",
+      template: "./src/index.html"
+    }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      generateStatsFile: true
     })
   ],
   output: {
-    filename: 'index.bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "index.bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -23,20 +29,20 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader"
         }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: ["file-loader"]
       },
       {
         test: /\.(woff|woff2|eot|)$/,
-        use: ['file-loader']
+        use: ["file-loader"]
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   }
