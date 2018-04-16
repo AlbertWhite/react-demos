@@ -1,6 +1,8 @@
 //entry file for the project
 //need to implement: redux-saga, react-redux
 
+import "babel-polyfill"
+
 import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
@@ -10,6 +12,7 @@ import rootSaga from "./sagas/index"
 import AuthenticationRoutes from "./routes/authentication"
 import { BrowserRouter as Router } from "react-router-dom"
 import * as actions from "./actions/authentication"
+import rootReducer from "../src/reducers/root"
 
 const sagaMiddleware = createSagaMiddleware()
 const middleWares = applyMiddleware(sagaMiddleware)
