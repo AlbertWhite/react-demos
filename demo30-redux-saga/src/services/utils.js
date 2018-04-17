@@ -4,7 +4,6 @@ import { apiRoute } from "../constants/path.js"
 //Chrome does not support localhost for CORS requests
 export function callApi(endpoint, payload) {
   const fullUrl = apiRoute + endpoint
-  debugger
   const opts = typeof payload !== "undefined" ? payload.options : {}
 
   //fetch function, second parameter includes body content and request headers
@@ -12,7 +11,6 @@ export function callApi(endpoint, payload) {
     fetch(fullUrl, opts)
       .then(response => {
         const bodyLength = response.headers.get("Content-Length")
-        debugger
         if (
           response.status !== 200 ||
           (bodyLength !== null && bodyLength <= 0)

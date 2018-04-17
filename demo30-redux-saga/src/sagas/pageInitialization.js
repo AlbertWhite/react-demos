@@ -10,9 +10,18 @@ export function* initAuth(action) {
 }
 
 export function* fetchSignupForm(action) {
-  console.log("fetch billing address")
   //use call to call a function with the second parameter as the payload for the function
-  yield call(api.fetchSignUp, {
+  const { response, error } = yield call(api.fetchSignUp, {
     ...APT_GET_REQUEST
   })
+  if (response) {
+    yield put({ type: actionTypes.FETCH_SIGNUP_FORM.SUCCESS, response })
+  } else if (error) {
+    yield put({ type: actionTypes.FETCH_SIGNUP_FORM.ERROR, response })
+  }
+}
+
+export function* fetchSignupFormSuccess(action) {
+  //if other action to dispatch
+  //console.log(action)
 }

@@ -13,7 +13,15 @@ function* watchFetchSignupForm() {
   )
 }
 
+function* watchFetchSignupFormSuccess() {
+  yield takeEvery(
+    actionTypes.FETCH_SIGNUP_FORM.SUCCESS,
+    pageInitialization.fetchSignupFormSuccess
+  )
+}
+
 export default function* rootSaga() {
   yield [fork(watchInitPage)]
   yield [fork(watchFetchSignupForm)]
+  yield [fork(watchFetchSignupFormSuccess)]
 }
