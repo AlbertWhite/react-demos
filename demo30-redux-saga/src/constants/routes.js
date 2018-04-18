@@ -1,15 +1,12 @@
 //manage routekey and real path
 
 export const routeKeys = {
-  signin: 0,
-  signup: 1
+  index: 0
 }
 
 export const getRoute = key => {
   switch (key) {
-    case routeKeys.signin:
-      return `/signin`
-    case routeKeys.signup:
-      return `/signup`
+    case routeKeys.index:
+      return `/index`
   }
 }

@@ -17,7 +17,7 @@ export function* fetchSignupForm(action) {
   if (response) {
     yield put({ type: actionTypes.FETCH_SIGNUP_FORM.SUCCESS, response })
   } else if (error) {
-    yield put({ type: actionTypes.FETCH_SIGNUP_FORM.ERROR, response })
+    yield put({ type: actionTypes.FETCH_SIGNUP_FORM.FAILURE, response })
   }
 }
 
