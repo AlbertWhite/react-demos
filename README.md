@@ -135,17 +135,12 @@ A sample project with react-redux, react-router, redux-saga, redux-form with htt
 Done:
 * create sample api with restify node module - done: api is ready https://github.com/AlbertWhite/restify-api-demo
 * router. Build scene, container, component based on route.
-*  use babel stage 3 for using spread function
+* use babel stage 3 for using spread function
+* api call with redux saga for dispatching action. 
+* splitBundle webpack plugin for faster compiling
 
-Todo:
-- add http get with redux-saga
-- add http post with redux-form
-  passion creativity consistence
-  明早可以起来写点东西 关于养孩子的设计师的工作 不仅是之前 更是之后
-  which things are 等待
-- so long 
-
-// todo: add BundleAnalyzerPlugin for analyser the size of bundle
-// set mode : for dev it is normal to have big bundle
-
-* problem : webpack compiling is long !
+To do:
+* signup component with redux form
+* validation with redux form
+* submit form with post and http post, after that change route
+* manage the css with the set up
