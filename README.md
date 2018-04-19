@@ -133,14 +133,13 @@ From https://redux-saga-in-chinese.js.org/docs/introduction/BeginnerTutorial.htm
 A sample project with react-redux, react-router, redux-saga, redux-form with http get and http post
 
 Done:
+
 * create sample api with restify node module - done: api is ready https://github.com/AlbertWhite/restify-api-demo
 * router. Build scene, container, component based on route.
 * use babel stage 3 for using spread function
-* api call with redux saga for dispatching action. 
+* api call with redux saga for dispatching action.
 * splitBundle webpack plugin for faster compiling
 
-To do:
-* signup component with redux form
-* validation with redux form
-* submit form with post and http post, after that change route
-* manage the css with the set up
+----- to do
+
+* how the css is managed
