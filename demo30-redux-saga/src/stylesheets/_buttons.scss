@@ -1,0 +1,358 @@
+#{$all-buttons} {
+  display: inline-block;
+  height: 40px;
+  padding: $small-spacing $base-spacing;
+  padding: 5px 10px;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $action-color;
+  border-radius: $base-border-radius;
+  color: #fff;
+  cursor: pointer;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  font-weight: normal;
+  line-height: 1;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  transition: all $base-duration;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.button {
+  @extend #{$all-buttons};
+
+  &--full {
+    width: 100%;
+
+    @media (min-width: $large-screen) {
+      width: auto;
+    }
+
+    &:hover,
+    &:visited,
+    &:active {
+      color: white;
+    }
+  }
+}
+
+.button-edit {
+  min-width: 204px;
+  height: 40px;
+  padding: 5px 40px;
+  border: 1px solid $medium-gray;
+  background-color: $white;
+  color: $black;
+  line-height: 30px;
+
+  @extend #{$all-buttons};
+
+  &:visited,
+  &:active {
+    border: 1px solid $medium-gray;
+    background: white;
+    color: $dark-gray;
+    outline: none;
+  }
+
+  &:hover {
+    border: 1px solid $dark-gray;
+    background: $dark-gray;
+    color: white;
+    outline: none;
+  }
+}
+
+.button-outline {
+  position: absolute;
+  right: 20px;
+  overflow: hidden;
+  min-width: 90px;
+  height: 30px;
+  border: 1px solid $medium-gray;
+  background: white;
+  color: $dark-gray;
+  line-height: 10px;
+  outline: none;
+
+  @media (min-width: $large-screen) {
+    right: 30px;
+  }
+
+  &--big {
+    display: inline-block;
+    height: 36px;
+    padding: 0 40px;
+  }
+
+  &:hover {
+    border: 1px solid $dark-gray;
+    background: $dark-gray;
+    color: white;
+    outline: none;
+  }
+
+  &:visited,
+  &:active {
+    border: 1px solid $dark-gray;
+    background: white;
+    color: $dark-gray;
+    outline: none;
+  }
+
+  &--relative {
+    position: relative;
+    right: 0;
+  }
+
+  &--dark {
+    background-color: $dark-gray;
+    border-color: $dark-gray;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: white;
+      border-color: $dark-gray;
+      color: $dark-gray;
+    }
+  }
+}
+
+.button-load {
+  position: relative;
+  overflow: hidden;
+  padding: 5px 10px;
+  border: 1px solid $medium-gray;
+  background: white;
+  color: $dark-gray;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  outline: none;
+
+  @include animateButton(white, $dark-gray);
+
+  &--promotion {
+    right: 0;
+    position: absolute;
+    height: 30px;
+  }
+
+  &--relative {
+    position: relative;
+    right: 0;
+  }
+
+  &:hover {
+    border: 1px solid $dark-gray;
+    background: $dark-gray;
+    color: white;
+    outline: none;
+  }
+
+  &:visited,
+  &:active {
+    border: 1px solid $dark-gray;
+    background: $dark-gray;
+    color: white;
+    outline: none;
+  }
+
+  &--green {
+    background: $green;
+    border-color: $green;
+    color: white;
+
+    @include animateButton(white, $dark-gray);
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      background: lighten($green, 10%);
+      border-color: lighten($green, 10%);
+    }
+  }
+
+  &--cyan {
+    @include animateButton(white, $dark-gray);
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      border-color: $dark-gray;
+    }
+  }
+
+  &--purple {
+    @include animateButton(white, $dark-gray);
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      border-color: $dark-gray;
+    }
+  }
+
+  &--paypal-full {
+    background: $paypal;
+    border-color: $paypal;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+
+    @include animateButton(white, darken($paypal, 5%));
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      background: lighten($paypal, 5%);
+      border-color: lighten($paypal, 5%);
+      color: white;
+    }
+
+    span:last-child() {
+      font-weight: bold;
+    }
+  }
+
+  &--orange-full {
+    background: $orange;
+    border-color: $orange;
+    color: white;
+
+    @include animateButton(white, darken($orange, 5%));
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      background: lighten($orange, 5%);
+      border-color: lighten($orange, 5%);
+      color: white;
+    }
+  }
+
+  &--yellow-full {
+    background: $yellow;
+    border-color: $yellow;
+    color: white;
+
+    @include animateButton(white, darken($yellow, 10%));
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      background: darken($yellow, 10%);
+      border-color: darken($yellow, 10%);
+      color: white;
+    }
+  }
+
+  &--cyan-full {
+    background: $fnac-plus;
+    border-color: $fnac-plus;
+    color: white;
+
+    @include animateButton(white, darken($fnac-plus, 20%));
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      background: lighten($fnac-plus, 10%);
+      border-color: lighten($fnac-plus, 10%);
+      color: white;
+    }
+  }
+
+  &--service{
+    margin: 13px 0;
+    position: absolute;
+    right: 20px;
+    @media(min-width: $large-screen){
+      right: 30px;
+    }
+  }
+}
+
+.button-relative {
+  position: relative;
+}
+
+.button__tooltip {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  left: 0;
+  display: block;
+  height: auto;
+  padding: 15px 20px;
+  border: 1px solid $medium-gray;
+  background: $white;
+  color: $black;
+  font-weight: 700;
+  line-height: normal;
+  white-space: normal;
+
+  &:before,
+  &:after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    content: ' ';
+    pointer-events: none;
+  }
+
+  &:before {
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #2f2f2f;
+    border-left: 10px solid transparent;
+    margin-left: -10px;
+  }
+
+  &:after {
+    width: 0;
+    height: 0;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid white;
+    border-left: 9px solid transparent;
+    margin-left: -9px;
+  }
+}
+
+.button__icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}

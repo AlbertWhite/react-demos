@@ -1,0 +1,89 @@
+// // @import "../../stylesheets/_base-pure";
+
+// .input-material {
+//   position: relative;
+// }
+
+// .input-material__field {
+//   position: relative;
+//   z-index: 1;
+//   height: auto;
+//   padding: 3px 15px 2px 0;
+//   border: 0;
+//   border-bottom: 1px solid $light-gray;
+//   background-color: transparent;
+//   border-radius: 0;
+//   color: $black;
+//   font-size: 15px;
+//   line-height: 22px;
+
+//   &:-webkit-autofill {
+//     box-shadow: 0 0 0 30px $white inset;
+//     color: $black;
+//   }
+
+//   &:focus ~ .input-material__label,
+//   .input--valid & ~ .input-material__label,
+//   .input--readOnly & ~ .input-material__label,
+//   .input--filled & ~ .input-material__label {
+//     position: absolute;
+//     top: -9px;
+//     font-size: 11px;
+//   }
+
+//   .input--error & {
+//     border-bottom-color: $red;
+//   }
+
+//   .input--valid &,
+//   .input--readOnly &,
+//   &:-webkit-autofill ~ .input-material__label {
+//     border-bottom-color: $green;
+//   }
+// }
+
+// .input-material__label {
+//   position: absolute;
+//   z-index: 0;
+//   top: 5px;
+//   left: 0;
+//   color: $black;
+//   font-size: 14px;
+//   font-weight: 300;
+//   transition: ease 0.2s;
+// }
+
+// .input-material--error__label {
+//   position: absolute;
+//   top: 34px;
+//   font-size: 0.7rem;
+// }
+
+// .input-material__search {
+//   position: absolute;
+//   z-index: 2;
+//   top: 32px;
+//   right: 0;
+//   left: 0;
+//   background: $lighter-gray;
+//   color: $black;
+//   cursor: pointer;
+//   font-size: 12px;
+// }
+
+// .input-material__search-item {
+//   padding: 5px;
+
+//   &:hover {
+//     background-color: $light-gray;
+//   }
+// }
+
+// .input-material__icon {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   color: $light-gray;
+//   font-size: 16px;
+//   line-height: 32px;
+// }

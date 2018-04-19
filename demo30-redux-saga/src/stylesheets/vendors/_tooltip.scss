@@ -1,0 +1,21 @@
+.rc-tooltip-inner{
+  background-color: white;
+  border-radius: 3px;
+  opacity: 1;
+  color: #232323;
+  max-width: 280px;
+  border-left: 5px $cyan solid;
+}
+
+.rc-tooltip-placement-bottom .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomRight .rc-tooltip-arrow{
+  border-bottom-color: white;
+}
+
+.rc-tooltip-placement-top .rc-tooltip-arrow, .rc-tooltip-placement-topLeft .rc-tooltip-arrow, .rc-tooltip-placement-topRight .rc-tooltip-arrow {
+  bottom: 4px;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: white;
+}

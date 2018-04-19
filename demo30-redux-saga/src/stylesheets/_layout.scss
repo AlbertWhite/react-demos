@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  background: #f2f2f2;
+  height: 100%;
+  padding: 0;
+  margin: 0;  
+}
