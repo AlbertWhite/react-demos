@@ -140,6 +140,10 @@ Done:
 * api call with redux saga for dispatching action.
 * splitBundle webpack plugin for faster compiling
 
------ to do
 
-* how the css is managed
+Something need to learn in detail:
+* manage scss with mixin 
+* write input component for the HOC field
+the above two tasks and make component reusable
+
+* manage api header and manage the response and error
