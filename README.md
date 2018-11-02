@@ -161,3 +161,43 @@ Something need to learn in detail:
 - https://github.com/reduxjs/reselect why we need reselect ? in mapStateToProps, " any time the store is updated, mapStateToProps will be called". It causes many unnecessary update, with reselect, we defind the input as listeners.
 
 - createSelector is like a reduce function, take the value of input selector as input and use reduce function for calculation. If we need deal with the data after denormalir, use reselect.
+
+```
+import { createSelector } from 'reselect'
+​
+const getVisibilityFilter = state => state.visibilityFilter
+const getTodos = state => state.todos
+​
+export const getVisibleTodos = createSelector(
+  [getVisibilityFilter, getTodos], //array of input parameter(return by function) for the reduce function
+  (visibilityFilter, todos) => { //reduce function
+    switch (visibilityFilter) {
+      case 'SHOW_ALL':
+        return todos
+      case 'SHOW_COMPLETED':
+        return todos.filter(t => t.completed)
+      case 'SHOW_ACTIVE':
+        return todos.filter(t => !t.completed)
+    }
+  }
+)
+```
+
+- one of the best practice: create selector by reselect, use it in container as reduce fonction for calculation
+
+## other
+
+- CreateContext(), Context.Provider, Context.Consumer
+
+Future direction: creative and interactive
+Front web agency / cool product with react / game unity
+
+- react hooks:
+
+  1. useState: for using state in functional components
+     const [stateName, updateStateFunction] = useState(initialStateValue)
+  2. useEffect: also for functional components (it runs after every render(), like componentDidMount)
+     useEffect(()=>{
+     };)
+
+  to be continued: customer hook, hook which is needed to be clean up
