@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const Child = () => (
-  <h1>'higher ordered component'</h1>
+  <h1>children component</h1>
 )
 
 const Transformer = (props) => {
