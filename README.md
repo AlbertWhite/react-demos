@@ -185,12 +185,51 @@ export const getVisibleTodos = createSelector(
 
 - one of the best practice: create selector by reselect, use it in container as reduce fonction for calculation
 
+### demo 36
+
+Hoc and context, (good tuto)[https://daveceddia.com/context-api-vs-redux/]
+
+With context, we can mock 'connect'(HOC and context consumer), 'provider and container'(context provider)
+
+**define a context**
+
+```js
+const Context = React.createContext() //context in upper case because it will define a component
+```
+
+**Use a context**
+
+```html
+<Context.Provider value={{
+  A: ...,
+  B: ...
+}}>
+</Context.Provider>
+
+<Context.Consumer>{
+  value => {
+    <div>
+    </div>
+  }
+}
+/<Context.Consumer>
+```
+
+**Turn consumer to a higher ordered component**
+
+```js
+function contextConsumer(Component) {
+  return props => {
+    return (
+      <Context.Consumer>
+        {value => <Component {...props} value={value} />}
+      </Context.Consumer>
+    )
+  }
+}
+```
+
 ## other
-
-- CreateContext(), Context.Provider, Context.Consumer
-
-Future direction: creative and interactive
-Front web agency / cool product with react / game unity
 
 - react hooks:
 
