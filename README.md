@@ -229,6 +229,16 @@ function contextConsumer(Component) {
 }
 ```
 
+### demo 37 Flow
+
+- To install:
+
+1. `yarn add flow-bin`
+2. `yarn run flow init` to create .flowconfig file
+3. `yarn run flow` to check files who begin with `//@flow`
+
+- Flow makes the static type checking (not run time)
+
 ## other
 
 - react hooks:
