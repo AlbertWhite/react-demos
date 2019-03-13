@@ -9,7 +9,14 @@ import React, { Component } from 'react'
 
 type Props = {
   firstName: string,
-  lastName: string
+  lastName: string,
+  optionalProperty?: boolean,
+  obj: {
+    a: string,
+    b: string,
+    c: string
+  },
+  func: ({ a: string, b: string }) => void
 }
 
 export default class extends Component<Props> {

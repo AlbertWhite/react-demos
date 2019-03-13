@@ -239,6 +239,8 @@ function contextConsumer(Component) {
 
 - Flow makes the static type checking (not run time)
 
+- [How to add flow type check / default props for class and functional components](https://flow.org/en/docs/react/components/)
+
 ## other
 
 - react hooks:
