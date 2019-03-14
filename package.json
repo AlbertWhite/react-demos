@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "create-react-app": "^2.1.8",
     "express": "^4.16.4",
     "node": "8.10.0",
     "normalizr": "^3.2.4",
