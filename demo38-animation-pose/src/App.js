@@ -18,7 +18,23 @@ class App extends Component {
 
   render() {
     const Box = posed.div({
-      visible: { opacity: 1 }, // define animation states
+      visible: {
+        // define animation states
+        opacity: 1,
+        scaleY: 1,
+        transition: {
+          // every animation state has a transition property
+          // transition: how animation is made
+
+          // some properties : https://popmotion.io/pose/learn/custom-transitions/#custom-transitions-basic-usage
+
+          // types: tween (default) / decay / keyframes
+          // ease: the speed changes over the animation
+          // delay: the delay of an animation
+          opacity: { ease: 'easeOut', duration: 300 }, // it is possible to define multiple transitions
+          default: { ease: 'linear', duration: 300 }
+        }
+      },
       hidden: { opacity: 0 }
     })
 
