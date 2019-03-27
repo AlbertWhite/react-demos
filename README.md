@@ -241,6 +241,24 @@ function contextConsumer(Component) {
 
 - [How to add flow type check / default props for class and functional components](https://flow.org/en/docs/react/components/)
 
+### demo 39 formik vs reduxform / material-ui vs own component
+
+A form lib should be able to manage the :
+
+- render form
+- manage the initial values
+- validate the form with a schema on the client side and save the error message somewhere
+- submit(isSubmitting state) / catch the error and show the error message
+- disable double submit : loader / disable the button of submit
+- resetForm
+
+Own form component should be able to manage the :
+
+- render form control component with the right attributes(name, label, type, options for select...)
+- show the value
+- onChange / handleChange
+- show error
+
 ## other
 
 - react hooks:

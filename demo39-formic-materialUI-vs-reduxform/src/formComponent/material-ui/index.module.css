@@ -1,0 +1,22 @@
+.textRoot {
+  margin-top: 20px !important;
+}
+
+.textRoot:after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6) !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.radioGroup {
+  flex-direction: row !important;
+}
+
+.button {
+  margin-top: 20px !important;
+}
+
+.error {
+  color: red;
+  margin: 5px 0 10px 0;
+}
