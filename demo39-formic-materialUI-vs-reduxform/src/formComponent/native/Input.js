@@ -1,15 +1,15 @@
 import React from 'react'
-import styles from './index.module.css'
+import './index.scss'
 
 const Input = props => {
   const { label, type, meta, name, input } = props
   const { touched, error, warning } = meta
 
   return (
-    <div className="input__container">
+    <div>
       <label htmlFor="id">{label}</label>
       <input {...input} type={type} />
-      {touched && (error && <div className={styles.error}>{error}</div>)}
+      {touched && (error && <div className="error">{error}</div>)}
     </div>
   )
 }

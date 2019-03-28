@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './index.module.css'
+import './index.scss'
 
 const Radio = props => {
   const { items, id, input, meta } = props
