@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import styles from './index.module.css'
 
 export default props => {
-  const { name, items, errors, handleChange } = props
+  const { name, items, errors, handleChange, touched } = props
 
   return (
     <>
@@ -27,7 +27,9 @@ export default props => {
           )
         })}
       </RadioGroup>
-      {errors[name] && <div className={styles.error}>{errors[name]}</div>}
+      {errors[name] && touched && (
+        <div className={styles.error}>{errors[name]}</div>
+      )}
     </>
   )
 }

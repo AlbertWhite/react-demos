@@ -246,18 +246,25 @@ function contextConsumer(Component) {
 A form lib should be able to manage the :
 
 - render form
+- pass the field and form status to the components (touched, submitting, error...)
 - manage the initial values
 - validate the form with a schema on the client side and save the error message somewhere
 - submit(isSubmitting state) / catch the error and show the error message
 - disable double submit : loader / disable the button of submit
 - resetForm
 
-Own form component should be able to manage the :
+Form component should be able to manage the :
 
+- It is a wrapper for DOM element (style, customized functions).
 - render form control component with the right attributes(name, label, type, options for select...)
 - show the value
 - onChange / handleChange
-- show error
+- show error after touching the field
+
+Why I think redux-form is better:
+Data can be stored in the store.
+Form have a map with form name. We can submit a form remotely by form name.
+Error handling is automatically.
 
 ## other
 

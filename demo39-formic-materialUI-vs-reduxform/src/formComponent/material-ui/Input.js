@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField'
 import styles from './index.module.css'
 
 const Input = props => {
-  const { name, errors, label } = props
+  const { name, errors, label, touched } = props
   return (
     <>
       <TextField
@@ -17,7 +17,9 @@ const Input = props => {
           }
         }}
       />
-      {errors[name] && <div className={styles.error}>{errors[name]}</div>}
+      {errors[name] && touched && (
+        <div className={styles.error}>{errors[name]}</div>
+      )}
     </>
   )
 }

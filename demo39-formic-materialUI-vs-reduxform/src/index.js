@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(reducer, applyMiddleware(sagaMiddleware))
-
+window.store = store
 sagaMiddleware.run(saga)
 
 ReactDOM.render(
