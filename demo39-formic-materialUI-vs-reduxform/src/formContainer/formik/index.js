@@ -20,6 +20,7 @@ const Form = props => {
       {({ errors, handleSubmit, isSubmitting, ...formikProps }) => {
         return (
           <form onSubmit={handleSubmit}>
+            <h3>formik + material-ui</h3>
             <Radio
               name="gender"
               items={[

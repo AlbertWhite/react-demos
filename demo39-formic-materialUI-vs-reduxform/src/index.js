@@ -17,7 +17,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(reducer, applyMiddleware(sagaMiddleware))
+const middlewares = applyMiddleware(sagaMiddleware)
+const store = createStore(reducer, composeEnhancers(middlewares))
 window.store = store
 sagaMiddleware.run(saga)
 

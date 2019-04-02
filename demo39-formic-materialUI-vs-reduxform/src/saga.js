@@ -1,6 +1,12 @@
-import { takeLatest, all, call } from 'redux-saga/effects'
+import { takeLatest, all, call, put } from 'redux-saga/effects'
+import { stopSubmit } from 'redux-form'
+
 function* watchSubmitFormik() {
   yield takeLatest('SUBMIT_WITH_FORMIK', submitFormik)
+}
+
+function* watchSubmitReduxForm() {
+  yield takeLatest('SUBMIT_WITH_REDUX_FORM', submitReduxForm)
 }
 
 const callApiPost = (url, payload) => {
@@ -50,6 +56,19 @@ function* submitFormik(action) {
   }
 }
 
+function* submitReduxForm(action) {
+  const values = action.payload
+  const { response, error } = yield call(
+    callApiPost,
+    'https://5a7ae1d9fb057400128504a5.mockapi.io/user',
+    values
+  )
+  if (response.err) {
+    // in formik, error handling is not dynamic. We need to inject it.
+    yield put(stopSubmit('someForm', { password: response.err }))
+  }
+}
+
 export default function* rootSaga() {
-  yield all([watchSubmitFormik()])
+  yield all([watchSubmitFormik(), watchSubmitReduxForm()])
 }

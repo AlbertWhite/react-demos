@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './index.scss'
 
 const Radio = props => {
@@ -18,7 +17,7 @@ const Radio = props => {
               <input
                 {...input}
                 checked={value.toString() === item.value.toString()}
-                className="radio__input"
+                className="radio-input"
                 name={input.name}
                 type="radio"
                 value={item.value}
@@ -32,8 +31,7 @@ const Radio = props => {
           )
         })}
 
-      {touched &&
-        (error && <span className="input--error__label">{error}</span>)}
+      {touched && (error && <span className="error">{error}</span>)}
     </div>
   )
 }
