@@ -1,5 +1,7 @@
 ### A working Demo for comparing redux-form vs formik, with/without material-UI
 
+![](https://raw.githubusercontent.com/AlbertWhite/react-demos/master/demo39-formic-materialUI-vs-reduxform/screenshot.png)
+
 In this demo, I create form control component (Input, Radio button, Button...) [with material-UI](https://github.com/AlbertWhite/react-demos/tree/master/demo39-formic-materialUI-vs-reduxform/src/formComponent/material-ui) and [without material-UI](https://github.com/AlbertWhite/react-demos/tree/master/demo39-formic-materialUI-vs-reduxform/src/formComponent/native).
 
 ### Form Control Component
