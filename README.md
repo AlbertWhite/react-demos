@@ -266,6 +266,19 @@ Data can be stored in the store.
 Form have a map with form name. We can submit a form remotely by form name.
 Error handling is automatically.
 
+### demo 40
+
+[Tutorial: How to fetch data with hooks](https://www.robinwieruch.de/react-hooks-fetch-data/)
+
+- Effect hooks run for component mounts/updates.
+- Add empty array as the second param to prevent from useEffect for update.
+- The callback in useEffect should return nothing or a clean up function
+- Customize hook: extract useState, useEffect into a function to contain the calculating part.
+  We can also return the callback to modify the state in order to trigger the useEffect.
+- multiple useState can be grouped into a reducer if they manage the same problem.
+- The returned cleanup function will run when the component unmount.
+- The problem of [component state is set even though the component got already unmounted](https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component/)
+
 ## other
 
 - react hooks:
