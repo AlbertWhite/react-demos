@@ -194,7 +194,7 @@ With context, we can mock 'connect'(HOC and context consumer), 'provider and con
 **define a context**
 
 ```js
-const Context = React.createContext() //context in upper case because it will define a component
+const Context = React.createContext(); //context in upper case because it will define a component
 ```
 
 **Use a context**
@@ -224,8 +224,8 @@ function contextConsumer(Component) {
       <Context.Consumer>
         {value => <Component {...props} value={value} />}
       </Context.Consumer>
-    )
-  }
+    );
+  };
 }
 ```
 
@@ -278,6 +278,13 @@ Error handling is automatically.
 - multiple useState can be grouped into a reducer if they manage the same problem.
 - The returned cleanup function will run when the component unmount.
 - The problem of [component state is set even though the component got already unmounted](https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component/)
+
+## demo41
+
+ReduxConnect:
+
+1. delay containers rendering until some async actions are happening.
+2. stores your data to redux state and connect your loaded data to your container.
 
 ## other
 
