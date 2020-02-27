@@ -11,16 +11,18 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
 const App = props => {
-  const { route } = props;
+  const { route, asyncConnectKeyExample } = props; // access data from asyncConnect as props
   return (
     <div>
-      {props.asyncConnectKeyExample && props.asyncConnectKeyExample.name}
+      {asyncConnectKeyExample && asyncConnectKeyExample.name}
       {renderRoutes(route.routes)}
     </div>
   );
 };
 
+// Conenect App with asyncConnect
 const ConnectedApp = asyncConnect([
+  // API for ayncConnect decorator: https://github.com/makeomatic/redux-connect/blob/master/docs/API.MD#asyncconnect-decorator
   {
     key: "asyncConnectKeyExample",
     promise: ({ match: { params }, helpers }) =>
@@ -48,17 +50,18 @@ const routes = [
   }
 ];
 
-// config store
+// Config store
 const store = createStore(
-  combineReducers({ reduxAsyncConnect }),
+  combineReducers({ reduxAsyncConnect }), // Connect redux async reducer
   window.__data
 );
 window.store = store;
 
-// Mount point
+// App Mount point
 hydrate(
   <Provider store={store} key="provider">
     <BrowserRouter>
+      {/** Render `Router` with ReduxAsyncConnect middleware */}
       <ReduxAsyncConnect routes={routes} />
     </BrowserRouter>
   </Provider>,
