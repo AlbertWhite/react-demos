@@ -281,10 +281,19 @@ Error handling is automatically.
 
 ## demo41
 
-ReduxConnect:
+#### ReduxConnect:
 
 1. delay containers rendering until some async actions are happening.
 2. stores your data to redux state and connect your loaded data to your container.
+
+Data will apprear in state.reduxAsyncconnect.key
+
+#### To notice
+
+- There are multiple ways to make ReduxAsyncConnect and Route work together.
+- [API doc](https://github.com/makeomatic/redux-connect/blob/master/docs/API.MD)
+- ayncConnect(AsyncProps, mapStateToProps?, mapDispatchToProps?)
+  AsyncProps is an array of {key, promise}
 
 ## other
 
