@@ -295,6 +295,12 @@ Data will apprear in state.reduxAsyncconnect.key
 - ayncConnect(AsyncProps, mapStateToProps?, mapDispatchToProps?)
   AsyncProps is an array of {key, promise}
 
+## demo 42
+
+HOC pattern + Context: withContext()
+
+The advantage is to pass context data to whatever which component by using 'withContext(Component)'.
+
 ## other
 
 - react hooks:
