@@ -301,6 +301,35 @@ HOC pattern + Context: withContext()
 
 The advantage is to pass context data to whatever which component by using 'withContext(Component)'.
 
+## demo 43
+
+Cypress folder structure:
+
+- fixture: json data to be loaded for mocking route response
+- integration: real tests
+- plugin
+- support: includes commands for customize commands
+
+All examples are available after installing cypress and running `cypress.open`
+
+Cypress alias: alias for DOM element, for route. Alias are used with @alias.
+
+Mock route response with fixture:
+
+```js
+cy.server();
+// you can also just write the fixture in the route
+cy.route("GET", "comments/*", "fixture:example.json").as("getComment");
+
+// trigger api call
+cy.get(".fixture-btn").click();
+
+cy.wait("@getComment")
+  .its("responseBody")
+  .should("have.property", "name")
+  .and("include", "Using fixtures to represent data");
+```
+
 ## other
 
 - react hooks:
