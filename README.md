@@ -330,6 +330,18 @@ cy.wait("@getComment")
   .and("include", "Using fixtures to represent data");
 ```
 
+Cypress.json for cypress configuration. Set baseUrl. We can set `localhost:3000` for testing on local:3000.
+
+Run cypress on _headless_ way: do not show the browser. Test all on the command line.
+
+PollyJS:
+
+Mode: replay (replay response from recorded HAR (Http Archive Format) file), record, pass through (pass)
+
+Once the Polly instance is stopped, the persister will generate the following HAR file which will be used to replay the response to that request when the test is rerun
+
+[`polly listen -p port -d recordingDir`](https://github.com/Netflix/pollyjs/blob/master/docs/cli/commands.md)
+
 ## other
 
 - react hooks:
