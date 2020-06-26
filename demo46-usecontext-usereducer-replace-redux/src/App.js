@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BooksProvider, useBooks } from './BookContext';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <BooksProvider>
+        <Books />
+      </BooksProvider>
+    </ApolloProvider>
   );
 }
+
+const Books = () => {
+  const books = useBooks();
+  return books.map((book) => <div>{book.name}</div>);
+};
 
 export default App;
