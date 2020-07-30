@@ -8,7 +8,6 @@ const DispatchContext = React.createContext(undefined)
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialContext)
-  console.log('ax', { dispatch })
   return (
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
@@ -28,8 +27,6 @@ export const useUIDispatch = () => {
   if (dispatch === undefined) {
     throw new Error('useBookingDispatch must be used within a BookingProvider')
   }
-
-  console.warn('ax', dispatch)
 
   const add = React.useCallback(() => {
     dispatch({ type: ActionTypes.ADD })

@@ -194,7 +194,7 @@ With context, we can mock 'connect'(HOC and context consumer), 'provider and con
 **define a context**
 
 ```js
-const Context = React.createContext(); //context in upper case because it will define a component
+const Context = React.createContext() //context in upper case because it will define a component
 ```
 
 **Use a context**
@@ -219,13 +219,13 @@ const Context = React.createContext(); //context in upper case because it will d
 
 ```js
 function contextConsumer(Component) {
-  return props => {
+  return (props) => {
     return (
       <Context.Consumer>
-        {value => <Component {...props} value={value} />}
+        {(value) => <Component {...props} value={value} />}
       </Context.Consumer>
-    );
-  };
+    )
+  }
 }
 ```
 
@@ -317,17 +317,17 @@ Cypress alias: alias for DOM element, for route. Alias are used with @alias.
 Mock route response with fixture:
 
 ```js
-cy.server();
+cy.server()
 // you can also just write the fixture in the route
-cy.route("GET", "comments/*", "fixture:example.json").as("getComment");
+cy.route('GET', 'comments/*', 'fixture:example.json').as('getComment')
 
 // trigger api call
-cy.get(".fixture-btn").click();
+cy.get('.fixture-btn').click()
 
-cy.wait("@getComment")
-  .its("responseBody")
-  .should("have.property", "name")
-  .and("include", "Using fixtures to represent data");
+cy.wait('@getComment')
+  .its('responseBody')
+  .should('have.property', 'name')
+  .and('include', 'Using fixtures to represent data')
 ```
 
 Cypress.json for cypress configuration. Set baseUrl. We can set `localhost:3000` for testing on local:3000.
@@ -353,3 +353,7 @@ Once the Polly instance is stopped, the persister will generate the following HA
      };)
 
   to be continued: customer hook, hook which is needed to be clean up
+
+### demo 47 react lazyload
+
+Dynamic import.
