@@ -1,41 +1,46 @@
-import React from 'react';
-import reducer from './reducer';
+import React from 'react'
+import { reducer, ActionTypes } from './reducer'
 
-const initialcContext = {};
-const UIStateContext = React.createContext(initialcContext);
-const UIDispatchContext = React.createContext();
+const initialContext = 0
 
-export const UIProvider = () => {
-  const initialState = {};
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+const StateContext = React.createContext(initialContext)
+const DispatchContext = React.createContext(undefined)
+
+export const ContextProvider = ({ children }) => {
+  const [state, dispatch] = React.useReducer(reducer, initialContext)
   return (
-    <UIProviderProxy state={state} dispatch={dispatch}>
-      {children}
-    </UIProviderProxy>
-  );
-};
+    <StateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
+        {children}
+      </DispatchContext.Provider>
+    </StateContext.Provider>
+  )
+}
 
 export const useUIState = () => {
-  return React.useContext(UIStateContext);
-};
+  return React.useContext(StateContext)
+}
 
 export const useUIDispatch = () => {
-  const dispatch = React.useContext(UIDispatchContext);
+  const dispatch = React.useContext(DispatchContext)
 
-  const updateState = React.useCallback((payload) => {
-    dispatch(
-      {
-        // type:
-        // payload:
-      },
-      [dispatch]
-    );
-  });
+  if (dispatch === undefined) {
+    throw new Error('useBookingDispatch must be used within a BookingProvider')
+  }
+
+  const add = React.useCallback(() => {
+    dispatch({ type: ActionTypes.ADD })
+  }, [dispatch])
+
+  const substract = React.useCallback(() => {
+    dispatch({ type: ActionTypes.SUBSTRACT })
+  }, [dispatch])
 
   return React.useMemo(
     () => ({
-      updateState,
+      add,
+      substract,
     }),
     [dispatch]
-  );
-};
+  )
+}

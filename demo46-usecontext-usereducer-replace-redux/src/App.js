@@ -1,20 +1,18 @@
-import React from 'react';
-import { BooksProvider, useBooks } from './BookContext';
-import './App.css';
+import React from 'react'
+import { ContextProvider } from './UIContext'
+import { Button } from './Button'
+import { Number } from './Number'
+import './App.css'
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <BooksProvider>
-        <Books />
-      </BooksProvider>
-    </ApolloProvider>
-  );
+    <ContextProvider>
+      <>
+        <Number />
+        <Button />
+      </>
+    </ContextProvider>
+  )
 }
 
-const Books = () => {
-  const books = useBooks();
-  return books.map((book) => <div>{book.name}</div>);
-};
-
-export default App;
+export default App
