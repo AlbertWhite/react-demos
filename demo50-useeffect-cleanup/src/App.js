@@ -18,7 +18,7 @@ const InsideApp = ({ count }) => {
     return () => {
       console.log('cleanup in useEffect');
     };
-  }, [count]);
+  }, []);
 
   console.warn(`render with count ${count}`);
   return <div>{count}</div>;
